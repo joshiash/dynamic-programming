@@ -4,12 +4,12 @@ public class EqualSumPartition {
 
     public static void main(final String[] args) {
         final int[] array = new int[] {1, 5, 11, 5};
-        final boolean doesSubsetExist = findSubsetSum(array, array.length);
+        final boolean doesSubsetExist = findEqualSumPartition(array, array.length);
         System.out.println( doesSubsetExist );
     }
 
-    private static boolean findSubsetSum(final int[] array,
-                                         final int n) {
+    private static boolean findEqualSumPartition(final int[] array,
+                                                 final int n) {
 
         //Base Condition
         int totalSum = 0;
@@ -22,10 +22,10 @@ public class EqualSumPartition {
         }
 
         final int sumToFind = totalSum / 2;
-        return FindSubsetSum(array, n, sumToFind);
+        return findSubsetSum(array, n, sumToFind);
     }
 
-    private static boolean FindSubsetSum(final int[] array,
+    private static boolean findSubsetSum(final int[] array,
                                          final int n,
                                          final int sumToFind) {
         final boolean[][] t = new boolean[n + 1][sumToFind + 1];
